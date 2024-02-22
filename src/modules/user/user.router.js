@@ -1,12 +1,12 @@
 import { Router } from "express";
+import * as userController from './controller/user.js'
 const router = Router()
 
 
+// import * as validators from './user.validation.js'
 
-
-router.get('/', (req ,res)=>{
-    res.status(200).json({message:"User Module"})
-})
+router.get('/:id', userController.getStudentbyId )
+router.get('/', userController.getStudents )
 
 
 
