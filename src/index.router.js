@@ -16,7 +16,7 @@ import cors from 'cors'
 const initApp = (app, express) => {
     app.use(cors({}))
     //convert Buffer Data
-    app.use('/', (req, res, next) => {
+    app.get('/', (req, res, next) => {
         res.send("Welcom to our project")
     })
     app.use(express.json({}))
@@ -35,6 +35,7 @@ const initApp = (app, express) => {
     app.all('*', (req, res, next) => {
         res.send("In-valid Routing Plz check url  or  method")
     })
+   
  
     
     app.use(globalErrorHandling)
